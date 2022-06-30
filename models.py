@@ -22,3 +22,5 @@ class mock(Base):
     codigo = Column(String(100), unique=True)
     url = Column(String(1000))
     metodo = Column(String(10))
+
+
