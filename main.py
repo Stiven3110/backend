@@ -35,7 +35,7 @@ def iniciar_sesion():
 
 @app.post("/registro_servicio", response_model=schema.mock)
 def registro_servicio(mock: schema.mock, db: Session = Depends(get_db)):
-    db_mock = crud(db, codigo=mock.codigo)
+    db_mock = crud.get_mock_by_codigo(db, codigo=mock.codigo)
     if db_mock:
         raise HTTPException(status_code=400, detail="mock revisado")
     return crud.create_mock(db=db, mock=mock) 

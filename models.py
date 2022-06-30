@@ -18,7 +18,7 @@ class User(Base):
 class mock(Base):
     __tablename__ = "mocks"
 
-    id = Column(Integer, primary_key=True, index=True)
-    codigo = Column(String(1000))
+    id = Column(Integer, primary_key=True)
+    codigo = Column(String(100), unique=True)
     url = Column(String(1000))
     metodo = Column(String(10))
